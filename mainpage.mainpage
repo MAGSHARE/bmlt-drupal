@@ -1,0 +1,57 @@
+/***********************************************************************/
+/** \mainpage
+	<div style="height:24px"></div>
+	<div style="height:80px;background-color: #0013d2;background-image:url(../images/DocHeader.gif);background-position:center top;background-repeat:no-repeat"></div>
+	
+	This is the Drupal Module for the BMLT.
+	
+	\license This code is completely open and free. You may access it by <a href="http://magshare.org/welcome-to-magshare/bmlt-the-basic-meeting-list-toolbox/">visiting the BMLT Project Site</a>. It should never be sold.
+	\version 2.1.13
+	
+	<h1>INSTALLATION</h1>
+	You unzip the bmlt.zip file, and place the resulting "bmlt" directory into your Drupal sites/all/modules/ directory. If the directory does not already exist, you should create it.
+	
+	You then need to activate the block, and/or activate the input filter (which replaces
+	&lt;!--BMLT--&gt; with the BMLT implementation).
+	
+	In order to use the filter, you need to set up an input format at Administer &gt; Site Configuration &gt; Input Formats &gt;
+	
+	You need to specify an input format that uses the BMLT Inline filter.
+	
+	The BMLT filter is called "BMLT Inline", and works by replacing inline HTML &lt;!--BMLT--&gt; with the BMLT.
+	Just write a page or story, select the BMLT Inline input format for that page, and add that HTML to it.
+	At that point, you will get a BMLT instance.
+    
+    This file is part of the Basic Meeting List Toolbox (BMLT).
+    
+    Find out more at: http://magshare.org/bmlt
+    
+    BMLT is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    
+    BMLT is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    
+    You should have received a copy of the GNU General Public License
+    along with this code.  If not, see <http://www.gnu.org/licenses/>.
+	
+	<h2 id="docs_release_notes">RELEASE NOTES:</h2>
+	- May 22, 2011 -2.1.14 Release
+	    - Fixed a very strange bug that seems to cause error 500s on some servers. Not sure why the fix worked, but it does. This only manifested when doing an "address only" search in mobile mode.
+
+    - May 8, 2011 -2.1.13 Release
+        - Fixed a bug that prevented the Contact US form from being displayed.
+
+    - May 8, 2011 -2.1.11 Release
+        - Fixed an error in the parameter list that screwed up some advanced searches.
+
+    - May 7, 2011 -2.1.10 Release
+	    - Fixes a JavaScript error that was introduced by the Drupal kludge
+	    
+    - May 6, 2011 -2.1.9
+	    - Major rewrite
+*/

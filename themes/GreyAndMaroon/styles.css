@@ -1,0 +1,456 @@
+/*    
+    This file is part of the Basic Meeting List Toolbox (BMLT).
+    
+    Find out more at: http://magshare.org/bmlt
+    
+    BMLT is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    
+    BMLT is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    
+    You should have received a copy of the GNU General Public License
+    along with this code.  If not, see <http://www.gnu.org/licenses/>.
+*/
+table#bmlt_container div.c_comdef_search_results_map_container_div img
+{
+    max-width: none;
+}
+
+table#bmlt_container,
+table#bmlt_container .embedded_map_div,
+table#bmlt_container td.BMLTPlugin_container_td,
+table#bmlt_container td.BMLTPlugin_container_tr,
+table#bmlt_container td.BMLTPlugin_container_tbody,
+table#bmlt_container div.c_comdef_search_results_single_div,
+table#bmlt_container .c_comdef_search_specification_form_container_div,
+table#bmlt_container .bmlt_search_spec_table,
+table#bmlt_container .c_comdef_search_specification_map_div
+{
+    width: 100%;
+    margin:0;
+    padding:0;
+    border:none;
+}
+
+table#bmlt_container table.comdef_list_results_container,
+table#bmlt_container table.c_comdef_search_results_table
+{
+    margin:0;
+}
+
+table#bmlt_container tr.c_comdef_search_results_header_row td a,
+table#bmlt_container tr.c_comdef_search_results_header_row td a:visited
+{
+    color:#99f;
+}
+
+table#bmlt_container tr.c_comdef_search_results_header_row td a:hover,
+table#bmlt_container tr.c_comdef_search_results_header_row td a:active
+{
+    color:#f96;
+}
+
+table#bmlt_container .c_comdef_search_specification_form_container_div *,
+table#bmlt_container div.c_comdef_search_results_single_div *,
+table#bmlt_container .marker_info_window_div,
+table#bmlt_container .marker_info_window_div *,
+table#bmlt_container .throbber_div,
+table#bmlt_container .throbber_div img,
+table#bmlt_container .c_comdef_search_results_single_ajax_throbber_div,
+table#bmlt_container .c_comdef_search_results_single_ajax_throbber_div img
+{
+    margin:auto;
+}
+
+table#bmlt_container .marker_main_info_window_inner_div
+{
+    font-size:x-small;
+}
+
+table#bmlt_container h1,
+table#bmlt_container h2,
+table#bmlt_container h3,
+table#bmlt_container h4
+{
+    font-family: Geneva, Arial Sans-Serif;
+}
+
+table#bmlt_container div#c_comdef_search_specification_map_div
+{
+    height: 640px;
+}
+
+
+table#bmlt_container div#c_comdef_search_specification_map_div,
+table#bmlt_container div.c_comdef_search_results_map_container_div
+{
+	width: 100%;
+    height: 640px;
+}
+
+table#bmlt_container div.c_comdef_search_results_map_container_div
+{
+	position: relative;
+}
+
+table#bmlt_container a.c_comdef_search_specification_map_invis_a,
+table#bmlt_container a.c_comdef_search_specification_map_vis_a
+{
+    padding-top:8px;
+    padding-bottom:8px;
+}
+
+table#bmlt_container fieldset,
+table#bmlt_container legend
+{
+    background: none;
+    padding: 0;
+}
+
+table#bmlt_container label
+{
+    color: black;
+}
+
+table#bmlt_container div.bmlt_search_one_weekday_div
+{
+    width: 19%;
+}
+
+table#bmlt_container div.bmlt_search_one_format_div
+{
+    width:9%;
+}
+
+table#bmlt_container div.search_radius_div
+{
+    margin-top:8px;
+}
+
+table#bmlt_container dd.bmlt_search_one_service_body_dd,
+table#bmlt_container dt.bmlt_search_one_service_body_dt
+{
+    margin-left:1em;
+}
+
+table#bmlt_container label.result_type_advanced_label,
+table#bmlt_container label.bmlt_advanced_radius_label,
+table#bmlt_container label.bmlt_result_type_label
+{
+    margin-right:4px;
+}
+
+/* These are the theme-specific settings. */
+
+div#bmlt_container_div
+{
+    border: 1px solid #600;
+}
+
+table#bmlt_container .c_comdef_search_specification_map_div,
+table#bmlt_container .embedded_map_div
+{
+    border-top: 1px solid #600;
+    border-bottom: 1px solid #600;
+}
+
+table#bmlt_container .bmlt_spec_tab,        /* This is the class for the Search Form tab <a> elements. */
+table#bmlt_container .marker_more_info_a,   /* This is the "More Info" bar (link) at the bottom of the marker info window in Map View. */
+table#bmlt_container .marker_info_window_div .marker_line_name .marker_value,    /* This is the meeting name header in the info window */
+table#bmlt_container .marker_main_info_window_inner_div, /* This is the inside of the main marker info window. */
+table#bmlt_container .marker_main_info_window_div,   /* The surrounding window */
+table#bmlt_container .bmlt_menu_div,    /* The "New Search" divs. */
+table#bmlt_container .comdef_style_result_nav_header,
+table#bmlt_container .comdef_style_result_count_header,
+table#bmlt_container .c_comdef_meeting_search_selected_page,
+table#bmlt_container .c_comdef_search_results_table thead,
+table#bmlt_container .c_comdef_search_results_meeting_list_a:hover,
+table#bmlt_container .c_comdef_search_results_meeting_list_a:active,
+table#bmlt_container div.c_comdef_search_results_single_header_div,
+table#bmlt_container div.c_comdef_search_results_single_div,
+table#bmlt_container div.c_comdef_search_results_single_header_div h1,
+table#bmlt_container div.c_comdef_search_results_single_header_div h2,
+table#bmlt_container div.c_comdef_search_results_single_header_div h3,
+table#bmlt_container div.c_comdef_search_results_single_header_div h4,
+table#bmlt_container .c_comdef_search_results_formats_div .format_term_dt,
+table#bmlt_container .c_comdef_search_results_formats_div .label_div,
+table#bmlt_container .c_comdef_search_results_single_div .close_div,
+table#bmlt_container .bmlt_contact_us_form_div,
+table#bmlt_container .bmlt_contact_form_header_h2
+{
+    background-color:#600;
+}
+
+table#bmlt_container .c_comdef_search_results_alt1,
+table#bmlt_container .c_comdef_search_results_alt1 td,
+table#bmlt_container .throbber_div,          /* These are the window that surrounds the "throbber" */
+table#bmlt_container .c_comdef_search_results_single_ajax_throbber_div,
+table#bmlt_container .bmlt_search_spec_table,
+.BMLTPlugin_simple_throbber_div
+{
+    background-color:#ccc;
+}
+
+table#bmlt_container .c_comdef_search_results_table,
+table#bmlt_container .c_comdef_search_results_table tbody,
+table#bmlt_container .c_comdef_search_results_table tr,
+table#bmlt_container .c_comdef_search_results_table td
+{
+    border: none;
+}
+
+table#bmlt_container .c_comdef_search_results_table thead td
+{
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+table#bmlt_container .marker_more_info_a,           /* This is the basic font color for the links in the dark areas. */
+table#bmlt_container .marker_more_info_a:visited,
+table#bmlt_container .bmlt_spec_tab,
+table#bmlt_container .bmlt_spec_tab:visited
+{
+    color:#ccc;
+    text-decoration: underline;
+}
+
+table#bmlt_container .marker_more_info_a:hover,     /* Same, but for rollovers (hover). */
+table#bmlt_container .marker_more_info_a:active,
+table#bmlt_container .bmlt_spec_tab:hover,
+table#bmlt_container .bmlt_spec_tab active
+{
+    color:white;
+    text-decoration: none;
+}
+
+table#bmlt_container .marker_more_info_a,   /* This gives the top and bottom of each meeting in the info window a bit of breathing room. */
+table#bmlt_container .marker_info_window_div .marker_line_name .marker_value
+{
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+table#bmlt_container .marker_value  /* This is each value (so it is spaced away from the prompt) */
+{
+    padding-left: 4px;
+}
+
+table#bmlt_container .marker_prompt,    /* This gives each value line in the info window some breathing room. */
+table#bmlt_container .marker_value
+{
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+table#bmlt_container .marker_info_window_div    /* This is the info window section for each meeting. */
+{
+    border-color:#600;
+    background-color:#ccc;
+    overflow: hidden;
+}
+
+table#bmlt_container .c_comdef_search_specification_container_div .throbber_div,          /* These are the window that surrounds the "throbber" */
+table#bmlt_container .c_comdef_search_results_single_ajax_throbber_div
+{
+    top: 50% !important;
+    left:50% !important;
+    margin-top:-40px;
+    margin-left:-40px;
+    width: 80px;
+    height:80px;
+}
+
+table#bmlt_container .c_comdef_search_specification_container_div .throbber_div,          /* These are the window that surrounds the "throbber" */
+table#bmlt_container .c_comdef_search_results_single_ajax_throbber_div,
+.BMLTPlugin_simple_throbber_div
+{
+    border:1px solid #600;
+}
+
+table#bmlt_container .marker_main_info_window_inner_div label /* This is the label inside of the main marker info window. */
+{
+    color: white;
+    padding-right:4px;
+}
+
+table#bmlt_container .bmlt_menu_div    /* The "New Search" divs. */
+{
+    text-align: center;
+}
+
+table#bmlt_container .bmlt_menu_div a,    /* The "New Search" links. */
+table#bmlt_container .bmlt_menu_div a:visited
+{
+    color:#ccc;
+    text-decoration: underline;
+}
+
+table#bmlt_container .bmlt_menu_div a:hover,    /* The "New Search" links (rolled over). */
+table#bmlt_container .bmlt_menu_div a:active
+{
+    color:white;
+    text-decoration: none;
+}
+
+/* These are all the surrounding elements. Make sure there's no spaces. */
+table#bmlt_container,
+table#bmlt_container .c_comdef_search_specification_container_div,
+table#bmlt_container tbody td
+{
+    padding: 0px;
+    margin: 0px;
+}
+
+table#bmlt_container tbody td   /* Surround everything with a 1-pixel border */
+{
+    border: 1px solid #600;
+}
+
+/* Make sure we control the background color. */
+table#bmlt_container .c_comdef_search_specification_container_div,
+table#bmlt_container #c_comdef_search_specification_form_container_div,
+table#bmlt_container .bmlt_spec_tab_selected,
+table#bmlt_container .format_desc_dd
+{
+    background-color:#ccc;
+}
+
+/* These are the fieldsets in the basic and advanced search windows. */
+table#bmlt_container #c_comdef_search_specification_form_container_div fieldset
+{
+    border-color: #600;
+    padding: 4px;
+}
+
+table#bmlt_container .c_comdef_search_specification_form_header_div a.bmlt_spec_tab_selected       /* This is the class for the Search Form tab <a> elements. */
+{
+    border-color: #600;
+}
+
+table#bmlt_container .c_comdef_search_specification_form_header_div a.bmlt_spec_tab
+{
+    border-bottom-color:#600;
+}
+
+table#bmlt_container .c_comdef_search_specification_form_container_div
+{
+    border: none;
+}
+
+/* Give the legends some breathing room. */
+table#bmlt_container #c_comdef_search_specification_form_container_div fieldset legend
+{
+    margin-left: 8px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+table#bmlt_container div.c_comdef_search_results_single_header_div,
+table#bmlt_container .c_comdef_search_results_formats_div .format_term_dt,
+table#bmlt_container div.c_comdef_search_results_single_header_div h1,
+table#bmlt_container div.c_comdef_search_results_single_header_div h2,
+table#bmlt_container div.c_comdef_search_results_single_header_div h3,
+table#bmlt_container div.c_comdef_search_results_single_header_div h4,
+table#bmlt_container .bmlt_contact_form_header_h2,
+table#bmlt_container .bmlt_contact_us_form_div label
+{
+    color: white;
+}
+
+table#bmlt_container .single_header_link,
+table#bmlt_container .single_header_link:visited
+{
+    color:#ccc;
+    text-decoration: underline;
+    font-weight:bold;
+}
+
+table#bmlt_container .single_header_link:hover,
+table#bmlt_container .single_header_link active
+{
+    color:white;
+    text-decoration: none;
+}
+
+table#bmlt_container .bmlt_contact_us_form_div,
+table#bmlt_container .c_comdef_search_results_formats_div
+{
+    border: none;
+}
+
+table#bmlt_container .c_comdef_search_results_formats_div .format_term_dt
+{
+    padding-top:4px;
+    padding-bottom:4px;
+}
+
+.BMLTPlugin_simple_throbber_container_div
+{
+    text-align:center;
+    margin-top:8px;
+}
+
+.BMLTPlugin_simple_throbber_div img,
+.BMLTPlugin_simple_throbber_div
+{
+    display:block;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+    width:40px;
+    height:40px;
+}
+
+table#bmlt_container .c_comdef_search_specification_map_invis_a,
+table#bmlt_container .c_comdef_search_specification_map_vis_a
+{
+    background-image: none;
+    background-color:#eee;
+    margin-right:8px;
+    margin-left:8px;
+    margin-bottom:4px;
+    border:1px solid #600;
+}
+
+table#bmlt_container fieldset,  /* Avoids Drupal 7 shenanigans */
+table#bmlt_container fieldset legend
+{
+    position: static;
+}
+
+
+table#bmlt_container fieldset legend
+{
+    width: auto;
+    border: none;
+    background: default;
+}
+
+
+table#bmlt_container .bmlt_search_one_service_body_dt input,
+table#bmlt_container .bmlt_search_one_format_div input,
+table#bmlt_container .bmlt_search_one_weekday_div input
+{
+    float:left;
+    display: block;
+    margin-right: 8px;
+}
+
+table#bmlt_container .search_check_div input
+{
+    display: inline;
+    margin-right: 8px;
+}
+
+table#bmlt_container .bmlt_search_one_service_body_dt label,
+table#bmlt_container .bmlt_search_one_format_div label,
+table#bmlt_container .bmlt_search_one_weekday_div label,
+table#bmlt_container .search_check_div label
+{
+    display: inline;
+}
