@@ -6,7 +6,7 @@
 	This is the Drupal Module for the BMLT.
 	
 	\license This code is completely open and free. You may access it by <a href="http://magshare.org/welcome-to-magshare/bmlt-the-basic-meeting-list-toolbox/">visiting the BMLT Project Site</a>. It should never be sold.
-	\version 2.1.13
+	\version 2.1.14
 	
 	<h1>INSTALLATION</h1>
 	You unzip the bmlt.zip file, and place the resulting "bmlt" directory into your Drupal sites/all/modules/ directory. If the directory does not already exist, you should create it.
