@@ -3,7 +3,7 @@
     // $Id$
     \file bmlt/bmlt.module
     \brief The implementation of the Drupal BMLT satellite server module.
-    \version 2.1.14
+    \version 2.1.15
     
     This file is part of the Basic Meeting List Toolbox (BMLT).
     
@@ -22,43 +22,41 @@
     You should have received a copy of the GNU General Public License
     along with this code.  If not, see <http://www.gnu.org/licenses/>.
 */
-require_once( dirname( __FILE__ ) . '/bmlt-drupal-satellite-plugin.php' );
+require_once(dirname(__FILE__). '/bmlt-drupal-satellite-plugin.php');
 
 /***********************************************/
 /**
     \brief  This displays the actual BMLT content if the
             text contains the BMLT shortcodes or HTML comments.
 */
-function bmlt_filter(   $op = 'list',
-                        $delta = 0,
-                        $format = -1,
-                        $text = '',
-                        $cache_id = 0
-                        )
-    {
+function bmlt_filter(   $op = 'list',   ///< The operation code.
+                        $delta = 0,     ///< Supplied by Drupal and ignored.
+                        $format = -1,   ///< Supplied by Drupal and ignored.
+                        $text = '',     ///< Supplied by Drupal and ignored.
+                        $cache_id = 0   ///< Supplied by Drupal and ignored.
+                      ) {
     global $BMLTPluginOp;
     
-    switch( $op )
-        {
+    switch($op){
         case 'list':
-            $text = array( $BMLTPluginOp->process_text( $BMLTPluginOp->local_strings['en']['add_instance'] ) );
-        break;
+            $text = array($BMLTPluginOp->process_text($BMLTPluginOp->localStrings['en']['add_instance']));
+            break;
         
         case 'no cache':
             return true;
-        break;
+            break;
         
         case 'description':
-            $text = $BMLTPluginOp->process_text( $BMLTPluginOp->local_strings['en']['add_instance'] );
-        break;
+            $text = $BMLTPluginOp->process_text($BMLTPluginOp->localStrings['en']['add_instance']);
+            break;
         
         case 'prepare':
-            $text = _bmlt_prepare( $text );
-        break;
+            $text = _bmlt_prepare($text);
+            break;
         
         case 'process':
-            $text = _bmlt_process( $text );
-        break;
+            $text = _bmlt_process($text);
+            break;
         }
     
     return $text;
@@ -68,17 +66,16 @@ function bmlt_filter(   $op = 'list',
 /**
     \brief Sets up the menu for the BMLT
 */
-function bmlt_menu( ) 
-    {
+function bmlt_menu() {
     global $BMLTPluginOp;
     
     $items = array('admin/settings/bmlt' => array(
-                            'title' => $BMLTPluginOp->process_text( $BMLTPluginOp->local_strings['en']['bmlt_settings'] ),
-                            'description' => $BMLTPluginOp->process_text( $BMLTPluginOp->local_strings['en']['describe_admin'] ),
+                            'title' => $BMLTPluginOp->process_text($BMLTPluginOp->localStrings['en']['bmlt_settings']),
+                            'description' => $BMLTPluginOp->process_text($BMLTPluginOp->localStrings['en']['describe_admin']),
                             'page callback' => 'bmlt_admin_form',
-                            'access arguments' => array( $BMLTPluginOp->process_text( $BMLTPluginOp->local_strings['en']['access_admin'] ) )
-                            )
-                        );
+                            'access arguments' => array($BMLTPluginOp->process_text($BMLTPluginOp->localStrings['en']['access_admin']))
+                           )
+                       );
     return $items;
     }
 
@@ -86,8 +83,7 @@ function bmlt_menu( )
 /**
     \brief This function returns the HTML for the BMLT admin.
 */
-function bmlt_admin_form( )
-    {
+function bmlt_admin_form() {
     global $BMLTPluginOp;
     $BMLTPluginOp->admin_ajax_handler();
     $BMLTPluginOp->admin_head();
@@ -98,8 +94,7 @@ function bmlt_admin_form( )
 /**
     \brief This function sets up the header for the module.
 */
-function bmlt_boot( )
-    {
+function bmlt_boot() {
     global $BMLTPluginOp;
 
     $BMLTPluginOp->ajax_router();
@@ -109,29 +104,27 @@ function bmlt_boot( )
 /**
     \brief  This tells Drupal 7 about our filter.
 */
-function bmlt_filter_info()
-    {
+function bmlt_filter_info() {
     global $BMLTPluginOp;
     
-    return array( 'bmlt' => array(  'title' => $BMLTPluginOp->process_text( $BMLTPluginOp->local_strings['en']['add_instance'] ),
+    return array('bmlt' => array('title' => $BMLTPluginOp->process_text($BMLTPluginOp->localStrings['en']['add_instance']),
                             'prepare callback' => '_bmlt_prepare',
                             'process callback' => '_bmlt_process',
                             'cache' => false
-                            )
-                );
+                           )
+               );
     }
 
 /***********************************************/
 /**
     \brief  
 */
-function _bmlt_prepare($in_text,
-                        $in_filter = null
-                        )
-{
+function _bmlt_prepare($in_text,            ///< The text to be filtered.
+                        $in_filter = null   ///< This is supplied by Drupal 7 and ignored.
+                      ) {
     global $BMLTPluginOp;
 
-    $BMLTPluginOp->standard_head( $in_text );
+    $BMLTPluginOp->standard_head($in_text);
     
     return $in_text;
 }
@@ -140,11 +133,10 @@ function _bmlt_prepare($in_text,
 /**
     \brief  
 */
-function _bmlt_process($in_text,
-                        $in_filter = null
-                        )
-{
+function _bmlt_process($in_text,            ///< The text to be filtered.
+                        $in_filter = null   ///< This is supplied by Drupal 7 and ignored.
+                      ) {
     global $BMLTPluginOp;
 
-    return $BMLTPluginOp->content_filter( $in_text );
+    return $BMLTPluginOp->content_filter($in_text);
 }
