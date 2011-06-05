@@ -27,6 +27,9 @@ This module operates through the use of text filters/input formats. You need to 
 CHANGELIST
 ----------
 
+2.1.15
+    - Reformatted the two Drupal-specific files to use Drupal coding standards.
+    
 2.1.14
     - Fixed a very strange bug that seems to cause error 500s on some servers. Not sure why the fix worked, but it does. This only manifested when doing an "address only" search in mobile mode.
 
