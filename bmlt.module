@@ -131,7 +131,14 @@ function _bmlt_prepare($in_text,
 {
     global $BMLTPluginOp;
 
-    $BMLTPluginOp->standard_head( $in_text );
+    if ( $BMLTPluginOp->get_shortcode ( $in_text, 'bmlt' )
+        ||  $BMLTPluginOp->get_shortcode ( $in_text, 'simple_search_list' )
+        ||  $BMLTPluginOp->get_shortcode ( $in_text, 'bmlt_simple' )
+        ||  $BMLTPluginOp->get_shortcode ( $in_text, 'bmlt_mobile' )
+        )
+        {
+        $BMLTPluginOp->standard_head( $in_text );
+        }
     
     return $in_text;
 }
