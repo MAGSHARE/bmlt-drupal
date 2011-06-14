@@ -1,24 +1,8 @@
 /****************************************************************************************//**
 * \file fast_mobile_lookup.js																*
 * \brief Javascript functions for the fast mobile lookup map interface.						*
-* \version 1.0.5																			*
-    
-    This file is part of the Basic Meeting List Toolbox (BMLT).
-    
-    Find out more at: http://magshare.org/bmlt
-    
-    BMLT is free software: you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-    
-    BMLT is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-    
-    You should have received a copy of the GNU General Public License
-    along with this code.  If not, see <http://www.gnu.org/licenses/>.
+* \version 1.0.6																			*
+* \license Public Domain -No restrictions at all.											*
 ********************************************************************************************/
 
 /****************************************************************************************//**
@@ -465,6 +449,16 @@ function WhereAmI ( in_qualifier_day,	/**< A string. This determines whether to 
 				ret += '<span class="marker_div_location_province">, '+in_meeting_obj.location_province.toString()+'</span>';
 				};
 			ret += '</div>';
+			};
+		
+		if ( in_meeting_obj.location_info )
+			{
+			ret += '<div class="marker_div_location_info">'+in_meeting_obj.location_info.toString()+'</div>';
+			};
+		
+		if ( in_meeting_obj.comments )
+			{
+			ret += '<div class="marker_div_location_info">'+in_meeting_obj.comments.toString()+'</div>';
 			};
 		
 		ret += '<div class="marker_div_location_maplink"><a href="';

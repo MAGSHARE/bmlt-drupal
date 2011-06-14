@@ -3,7 +3,7 @@
 *   \file   bmlt-cms-satellite-plugin.php                                                   *
 *                                                                                           *
 *   \brief  This is a generic CMS plugin class for a BMLT satellite client.                 *
-*   \version 1.0.5                                                                          *
+*   \version 1.0.6                                                                          *
 *                                                                                           *
     This file is part of the Basic Meeting List Toolbox (BMLT).
     
@@ -2374,6 +2374,16 @@ class BMLTPlugin
 
             $ret .= '<p><b>'.$this->process_text ( self::$local_mobile_distance ).':</b> '.htmlspecialchars ( $distance ).'</p>';
             }
+                                                        
+        if ( $meeting['location_info'] )
+            {
+            $ret .= '<p>'.htmlspecialchars ( $meeting['location_info'] ).'</p>';
+            }
+                    
+        if ( $meeting['comments'] )
+            {
+            $ret .= '<p>'.htmlspecialchars ( $meeting['comments'] ).'</p>';
+            }
         
         $ret .= '<p><b>'.$this->process_text ( self::$local_formats ).':</b> '.htmlspecialchars ( $meeting['formats'] ).'</p>';
         
@@ -2678,6 +2688,16 @@ class BMLTPlugin
 
                                                     $ret .= '</p>';
                                                     }
+                                                }
+                                                        
+                                            if ( $meeting['location_info'] )
+                                                {
+                                                $ret .= '<p class="location_info_p">'.htmlspecialchars ( $meeting['location_info'] ).'</p>';
+                                                }
+                                                        
+                                            if ( $meeting['comments'] )
+                                                {
+                                                $ret .= '<p class="comments_p">'.htmlspecialchars ( $meeting['comments'] ).'</p>';
                                                 }
                                             
                                             if ( $distance )
