@@ -6,7 +6,7 @@
 	This is the Drupal Module for the BMLT.
 	
 	\license This code is completely open and free. You may access it by <a href="http://magshare.org/welcome-to-magshare/bmlt-the-basic-meeting-list-toolbox/">visiting the BMLT Project Site</a>. It should never be sold.
-	\version 2.1.14
+	\version 2.1.17
 	
 	<h1>INSTALLATION</h1>
 	You unzip the bmlt.zip file, and place the resulting "bmlt" directory into your Drupal sites/all/modules/ directory. If the directory does not already exist, you should create it.
@@ -40,6 +40,9 @@
     along with this code.  If not, see <http://www.gnu.org/licenses/>.
 	
 	<h2 id="docs_release_notes">RELEASE NOTES:</h2>
+    - June 20, 2011 -2.1.17 Release
+        - Moved the project to a new Git structure. There should be no difference in operation, but things were rearranged, so there may be bugs.
+
     - June 14, 2011 -2.1.16 Release
         - Added the location text and comments to the meeting info displays in mobile mode.
 
