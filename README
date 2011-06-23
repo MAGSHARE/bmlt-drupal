@@ -15,6 +15,11 @@ The project requires a functioning BMLT root server ( http://magshare.org/blog/i
 It does not implement a root server, but connects to an existing one.
 It requires PHP 5.0 or above.
 
+This module depends upon the BMLT Satellite Base Class Project (included as a submodule). The GitHub repository
+for that module is at:
+
+    https://github.com/MAGSHARE/BMLT-Satellite-Base-Class
+
 INSTALLATION
 ------------
 
