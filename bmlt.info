@@ -1,0 +1,4 @@
+; $Id$
+name = BMLT
+description = This is a satellite client for a BMLT root server.
+core = 6.x
