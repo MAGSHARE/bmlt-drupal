@@ -32,6 +32,9 @@ This module operates through the use of text filters/input formats. You need to 
 CHANGELIST
 ----------
 
+2.1.18
+    - Now have the bmlt_changes shortcode.
+
 2.1.17
     - Refactored the shared code into a submodule.
 
