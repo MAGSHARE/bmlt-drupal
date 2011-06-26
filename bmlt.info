@@ -1,4 +1,4 @@
-version = 2.1.17
+version = 2.1.18
 name = BMLT
 description = This is a satellite client for a BMLT root server.
 core = 7.x
