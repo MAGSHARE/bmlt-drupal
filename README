@@ -31,6 +31,8 @@ This module operates through the use of text filters/input formats. You need to 
 
 CHANGELIST
 ----------
+2.1.19
+    - Addressed a condition that could result in warnings if the error level is set to ERR_ALL
 
 2.1.18
     - Now have the bmlt_changes shortcode.
