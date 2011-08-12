@@ -31,6 +31,9 @@ This module operates through the use of text filters/input formats. You need to 
 
 CHANGELIST
 ----------
+2.1.20
+    - Added the new shortcode "bmlt_map." Very useful.
+                
 2.1.19
     - Addressed a condition that could result in warnings if the error level is set to ERR_ALL
 
