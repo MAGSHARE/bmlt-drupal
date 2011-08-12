@@ -357,18 +357,21 @@ class BMLTDrupalPlugin extends BMLTPlugin
             
             if ( $load_head )
                 {
-                $uri = "$root_server?switcher=GetHeaderXHTML&script_only".$this->my_params;
-                $header_code = bmlt_satellite_controller::call_curl ( $uri, false );
-        
-                $scripts = explode ( " ", $header_code );
-                foreach ( $scripts as $uri2 )
+                if ( !$in_text || $this->get_shortcode ( $in_text, 'bmlt' ) )
                     {
-                    if ( !preg_match ( '|http://|', $uri2 ) )
+                    $uri = "$root_server?switcher=GetHeaderXHTML&script_only".$this->my_params;
+                    $header_code = bmlt_satellite_controller::call_curl ( $uri, false );
+            
+                    $scripts = explode ( " ", $header_code );
+                    foreach ( $scripts as $uri2 )
                         {
-                        $uri2 = $root_server_root.$uri2;
+                        if ( !preg_match ( '|http://|', $uri2 ) )
+                            {
+                            $uri2 = $root_server_root.$uri2;
+                            }
+                        // We have to do it this way, because Drupal messes with scripts. That messes with us.
+                        $additional_stuff .= '<script type="text/javascript" src="'.$uri2.'"></script>';
                         }
-                    // We have to do it this way, because Drupal messes with scripts. That messes with us.
-                    $additional_stuff .= '<script type="text/javascript" src="'.$uri2.'"></script>';
                     }
 
                 $url = $this->get_plugin_path();
