@@ -31,6 +31,9 @@ This module operates through the use of text filters/input formats. You need to 
 
 CHANGELIST
 ----------
+2.1.22
+	- Addresses a bug in Mozilla Firefox, that prevents the use of the popup menus in the multi-day (red) map icons.
+
 2.1.21
     - Fixes a couple of minor theme/style issues.
     - Mitigates a strange Firefox bug that caused weird page loads when closing the location area.

@@ -6,7 +6,7 @@
 	This is the Drupal Module for the BMLT.
 	
 	\license This code is completely open and free. You may access it by <a href="http://magshare.org/welcome-to-magshare/bmlt-the-basic-meeting-list-toolbox/">visiting the BMLT Project Site</a>. It should never be sold.
-	\version 2.1.20
+	\version 2.1.22
 	
 	<h1>INSTALLATION</h1>
 	You unzip the bmlt.zip file, and place the resulting "bmlt" directory into your Drupal sites/all/modules/ directory. If the directory does not already exist, you should create it.
@@ -40,6 +40,9 @@
     along with this code.  If not, see <http://www.gnu.org/licenses/>.
 	
 	<h2 id="docs_release_notes">RELEASE NOTES:</h2>
+	- August 16, 2011 -2.1.22 Release
+	    - Addresses a bug in Mozilla Firefox, that prevents the use of the popup menus in the multi-day (red) map icons.
+	    
 	- August 12, 2011 -2.1.21 Release
 	    - Fixes a couple of minor theme/style issues.
         - Mitigates a strange Firefox bug that caused weird page loads when closing the location area.
