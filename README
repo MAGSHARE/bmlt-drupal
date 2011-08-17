@@ -31,6 +31,9 @@ This module operates through the use of text filters/input formats. You need to 
 
 CHANGELIST
 ----------
+2.1.23
+    - Improved some of the basic styles in the new map search info windows.
+    
 2.1.22
 	- Addresses a bug in Mozilla Firefox, that prevents the use of the popup menus in the multi-day (red) map icons.
 

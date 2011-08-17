@@ -3,7 +3,7 @@
 *   \file   bmlt-drupal-satellite-plugin.php                                                *
 *                                                                                           *
 *   \brief  This is a Drupal plugin of a BMLT satellite client.                             *
-*   \version 2.1.22                                                                         *
+*   \version 2.1.23                                                                         *
 *                                                                                           *
     This file is part of the Basic Meeting List Toolbox (BMLT).
     
