@@ -31,6 +31,9 @@ This module operates through the use of text filters/input formats. You need to 
 
 CHANGELIST
 ----------
+2.1.24
+    - Fixes a JavaScript Error with the new map search on Internet Explorer.
+    
 2.1.23
     - Improved some of the basic styles in the new map search info windows.
     
