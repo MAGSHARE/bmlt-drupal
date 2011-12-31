@@ -31,6 +31,12 @@ This module operates through the use of text filters/input formats. You need to 
 
 CHANGELIST
 ----------
+2.2 -
+    - December 31, 2011
+    - Introduces some fixes for validation errors in the new map search.
+    - Removed some errant CSS.
+    - Now strip out the [[bmlt_mobile]] shortcode if the page is not a mobile page. This allows the shortcode to be used, as the comment version is stripped by "code cleaners."
+    
 2.1.24
     - Fixes a JavaScript Error with the new map search on Internet Explorer.
     
