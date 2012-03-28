@@ -31,6 +31,10 @@ This module operates through the use of text filters/input formats. You need to 
 
 CHANGELIST
 ----------
+2.2.1 -
+    - March 28, 2012
+    - Adds an alert to the new map search, informing the user when no meetings are found.
+    
 2.2 -
     - December 31, 2011
     - Introduces some fixes for validation errors in the new map search.
