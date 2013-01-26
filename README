@@ -31,6 +31,10 @@ This module operates through the use of text filters/input formats. You need to 
 
 CHANGELIST
 ----------
+3.0 -
+    - TBD
+    - Major rewrite of the default shortcode.
+    
 2.2.2 -
     - May 13, 2012
     - Fixed a nasty bug in the admin interface that could create multiple empty settings.
