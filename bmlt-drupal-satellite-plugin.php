@@ -3,7 +3,7 @@
 *   \file   bmlt-drupal-satellite-plugin.php                                                *
 *                                                                                           *
 *   \brief  This is a Drupal plugin of a BMLT satellite client.                             *
-*   \version 2.2.2                                                                          *
+*   \version 3.0                                                                          *
 *                                                                                           *
     This file is part of the Basic Meeting List Toolbox (BMLT).
     
@@ -337,16 +337,7 @@ class BMLTDrupalPlugin extends BMLTPlugin
             header ( "location: $mobile_url" );
             die ( );
             }
-        
-        if ( !$options['gmaps_api_key'] )   // No GMAP API key, no BMLT window.
-            {
-            $load_head = false;
-            }
 
-        $this->my_http_vars['gmap_key'] = $options['gmaps_api_key'];
-        
-        $this->my_http_vars['start_view'] = $options['bmlt_initial_view'];
-        
         $this->load_params ( );
         
         $root_server_root = $options['root_server'];
@@ -355,64 +346,35 @@ class BMLTDrupalPlugin extends BMLTPlugin
             {
             $root_server = $root_server_root."/client_interface/xhtml/index.php";
             
-            if ( $load_head )
-                {
-                if ( !$in_text || $this->get_shortcode ( $in_text, 'bmlt' ) )
-                    {
-                    $uri = "$root_server?switcher=GetHeaderXHTML&script_only".$this->my_params;
-                    $header_code = bmlt_satellite_controller::call_curl ( $uri, false );
+            $additional_stuff = '';
+
+            $header_code = bmlt_satellite_controller::call_curl ( "$root_server?switcher=GetHeaderXHTML&style_only".$this->my_params );
             
-                    $scripts = explode ( " ", $header_code );
-                    foreach ( $scripts as $uri2 )
-                        {
-                        if ( !preg_match ( '|http://|', $uri2 ) )
-                            {
-                            $uri2 = $root_server_root.$uri2;
-                            }
-                        // We have to do it this way, because Drupal messes with scripts. That messes with us.
-                        $additional_stuff .= '<script type="text/javascript" src="'.$uri2.'"></script>';
-                        }
-                    }
-
-                $url = $this->get_plugin_path();
-                
-                if ( !defined ('_DEBUG_MODE_' ) )
+            $styles = explode ( " ", $header_code );
+            foreach ( $styles as $uri2 )
+                {
+                $media = null;
+                if ( preg_match ( '/print/', $uri2 ) )
                     {
-                    $url .= 'js_stripper.php?filename=';
+                    $media = 'print';
                     }
                 
-                $url .= 'javascript.js';
-
-                $additional_stuff .= '<script type="text/javascript" src="'.$url.'"></script>';
-
-                $header_code = bmlt_satellite_controller::call_curl ( "$root_server?switcher=GetHeaderXHTML&style_only".$this->my_params );
-                
-                $styles = explode ( " ", $header_code );
-                foreach ( $styles as $uri2 )
+                if ( !preg_match ( '|http://|', $uri2 ) )
                     {
-                    $media = null;
-                    if ( preg_match ( '/print/', $uri2 ) )
-                        {
-                        $media = 'print';
-                        }
-                    
-                    if ( !preg_match ( '|http://|', $uri2 ) )
-                        {
-                        $uri2 = $root_server_root.$uri2;
-                        }
-                    
-                    $attr['href'] = $uri2;
-                    $attr['rel'] = 'stylesheet';
-                    $attr['type'] = 'text/css';
-                    $attr['media'] = $media;
-                    if ( function_exists ( 'drupal_add_link' ) )
-                        {
-                        drupal_add_link ( $attr );
-                        }
-                    else
-                        {
-                        $additional_stuff .= '<link rel="'.$attr['rel'].'" href="'.$attr['href'].'" type="'.$attr['type'].'" media="'.$attr['media'].'" />';
-                        }
+                    $uri2 = $root_server_root.$uri2;
+                    }
+                
+                $attr['href'] = $uri2;
+                $attr['rel'] = 'stylesheet';
+                $attr['type'] = 'text/css';
+                $attr['media'] = $media;
+                if ( function_exists ( 'drupal_add_link' ) )
+                    {
+                    drupal_add_link ( $attr );
+                    }
+                else
+                    {
+                    $additional_stuff .= '<link rel="'.$attr['rel'].'" href="'.$attr['href'].'" type="'.$attr['type'].'" media="'.$attr['media'].'" />';
                     }
                 }
             
@@ -424,19 +386,11 @@ class BMLTDrupalPlugin extends BMLTPlugin
                 {
                 $url .= 'style_stripper.php?filename=';
                 }
-            
-            $url .= 'styles.css';
 
-            $additional_stuff .= '<link rel="stylesheet" type="text/css" href="'.htmlspecialchars ( $url ).'" />';
+            $additional_stuff .= '<link rel="stylesheet" type="text/css" href="'.htmlspecialchars ( $url.'styles.css' ).'" />';
+            $additional_stuff .= '<link rel="stylesheet" type="text/css" href="'.htmlspecialchars ( $url.'nouveau_map_styles.css' ).'" />';
             
             $additional_css = '.bmlt_container * {margin:0;padding:0 }';
-            
-            if ( $options['push_down_more_details'] )
-                {
-                $additional_css .= 'table#bmlt_container div.c_comdef_search_results_single_div div.embedded_map_div, table#bmlt_container div.c_comdef_search_results_single_div, table#bmlt_container div.c_comdef_search_results_single_ajax_div{position:static;margin:0;width:100%;}';
-                $additional_css .= 'table#bmlt_container div.c_comdef_search_results_single_close_box_div{position:relative;left:100%;margin-left:-18px;}';
-                $additional_css .= 'table#bmlt_container div#bmlt_contact_us_form_div{position:static;width:100%;margin:0;}';
-                }
             
             if ( $options['additional_css'] )
                 {
