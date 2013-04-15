@@ -31,6 +31,10 @@ This module operates through the use of text filters/input formats. You need to 
 
 CHANGELIST
 ----------
+3.0.4 -
+    - April 15, 2013
+    - Fixes a JavaScript bug, caused by the work on the root server.
+    
 3.0.3 -
     - April 15, 2013
     - Fixes a Swedish localization issue.
