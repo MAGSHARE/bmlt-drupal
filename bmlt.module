@@ -3,7 +3,7 @@
     // $Id$
     \file bmlt/bmlt.module
     \brief The implementation of the Drupal BMLT satellite server module.
-    \version 3.0.4
+    \version 3.0.5
     
     This file is part of the Basic Meeting List Toolbox (BMLT).
     

@@ -3,7 +3,7 @@
 *   \file   bmlt-drupal-satellite-plugin.php                                                *
 *                                                                                           *
 *   \brief  This is a Drupal plugin of a BMLT satellite client.                             *
-*   \version 3.0.4                                                                          *
+*   \version 3.0.5                                                                          *
 *                                                                                           *
     This file is part of the Basic Meeting List Toolbox (BMLT).
     
@@ -27,6 +27,29 @@
 
 // Include the satellite driver class.
 require_once ( dirname ( __FILE__ ).'/BMLT-Satellite-Base-Class/bmlt-cms-satellite-plugin.php' );
+
+global $bmlt_localization;  ///< Use this to control the localization.
+
+if ( !isset ( $bmlt_localization ) || !$bmlt_localization )
+    {
+    $language = 'en';
+    
+    if ( function_exists ( 'i18n_get_lang' ) )
+        {
+        $language = i18n_get_lang();
+        }
+    
+    if ( $language )
+        {
+        $bmlt_localization = substr ( $language, 0, 2 );
+        }
+    
+    if ( !isset ( $bmlt_localization ) || !$bmlt_localization )
+        {
+        $bmlt_localization = 'en';  ///< Last-ditch default value.
+        }
+    }
+
 
 /****************************************************************************************//**
 *   \class BMLTDrupalPlugin                                                                 *
