@@ -31,6 +31,12 @@ This module operates through the use of text filters/input formats. You need to 
 
 CHANGELIST
 ----------
+3.0.5 -
+    - April 16, 2013
+    - Fixed a Swedish translation error.
+    - This should autodetect locale, now.
+    - Fixed some warnings in Drupal 7.
+    
 3.0.4 -
     - April 15, 2013
     - Fixes a JavaScript bug, caused by the work on the root server.
